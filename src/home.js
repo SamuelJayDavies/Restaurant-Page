@@ -71,6 +71,15 @@ function createContent() {
     return mainContentContainer;
 }
 
+function createRestaurantPreview(restaurantName, restaurantImg) {
+    const restaurantContainer = document.createElement("div");
+
+    const restaurantHeading = document.createElement("h1");
+    restaurantHeading.textContent = restaurantName;
+
+    restaurantContainer
+}
+
 function createFooter() {
     const footer = document.createElement("div");
     footer.classList.add("footer");
