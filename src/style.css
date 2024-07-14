@@ -54,6 +54,7 @@ table {
 
 body {
     background-color: var(--universalLightBlue);
+    font-family: "Raleway";
 }
 
 #main {
@@ -131,15 +132,22 @@ nav button {
     margin: 0.5em;
 }
 
+.inner-main-content-container {
+    color: white;
+    background-color: rgba(75, 75, 75, 0.3);
+
+    font-size: 2em;
+
+    margin: 2em;
+    padding: 1em;
+    border-radius: 0.5em;
+}
+
 .welcome-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    color: black;
-
-    font-size: 2em;
 }
 
 .footer {

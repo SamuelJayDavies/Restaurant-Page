@@ -1,6 +1,7 @@
 import './style.css';
 import universalLogo from "./logo.png";
 import universalCityWalkBanner from "./citywalk-banner.jpg";
+import antojitos from "./antojitos.jpeg";
 
 function createHomePage() {
     const main = document.getElementById("main");
@@ -54,6 +55,9 @@ function createContent() {
     const mainContentContainer = document.createElement("div");
     mainContentContainer.classList.add("main-content-container");
 
+    const mainInnerContentContainer = document.createElement("div");
+    mainInnerContentContainer.classList.add("inner-main-content-container");
+
     const welcomeDiv = document.createElement("div");
     welcomeDiv.classList.add("welcome-container");
     
@@ -66,7 +70,13 @@ function createContent() {
     welcomeDiv.appendChild(welcomeHeader);
     welcomeDiv.appendChild(introPara);
 
-    mainContentContainer.appendChild(welcomeDiv);
+    mainInnerContentContainer.appendChild(welcomeDiv);
+
+    const restaurantContainer = document.createElement("div");
+    restaurantContainer.classList.add("restaurant-container");
+    restaurantContainer.appendChild(createRestaurantPreview("Antojitos Authentic Mexican Food™", antojitos));
+    mainInnerContentContainer.appendChild(restaurantContainer);
+    mainContentContainer.appendChild(mainInnerContentContainer);
 
     return mainContentContainer;
 }
@@ -77,7 +87,10 @@ function createRestaurantPreview(restaurantName, restaurantImg) {
     const restaurantHeading = document.createElement("h1");
     restaurantHeading.textContent = restaurantName;
 
-    restaurantContainer
+    restaurantContainer.appendChild(restaurantHeading);
+
+    restaurantContainer.setAttribute("style", "background-image: " + restaurantImg);
+    return restaurantContainer;
 }
 
 function createFooter() {
