@@ -150,6 +150,19 @@ nav button {
     justify-content: center;
 }
 
+.restaurant {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 400px;
+    height: auto;
+
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-color:rgba(75, 75, 75, 0.3);
+}
+
 .footer {
     background-color: var(--universalLightBlue);
     color: white;

@@ -82,15 +82,16 @@ function createContent() {
 }
 
 function createRestaurantPreview(restaurantName, restaurantImg) {
-    const restaurantContainer = document.createElement("div");
+    const restaurant = document.createElement("div");
+    restaurant.classList.add("restaurant");
 
     const restaurantHeading = document.createElement("h1");
     restaurantHeading.textContent = restaurantName;
 
-    restaurantContainer.appendChild(restaurantHeading);
+    restaurant.appendChild(restaurantHeading);  
 
-    restaurantContainer.setAttribute("style", "background-image: " + restaurantImg);
-    return restaurantContainer;
+    restaurant.style.backgroundImage = 'url('+ restaurantImg + ' )';
+    return restaurant;
 }
 
 function createFooter() {
