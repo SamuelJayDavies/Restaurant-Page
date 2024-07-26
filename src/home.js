@@ -2,6 +2,16 @@ import './style.css';
 import universalLogo from "./logo.png";
 import universalCityWalkBanner from "./citywalk-banner.jpg";
 import antojitos from "./antojitos.jpeg";
+import bigfire from "./bigfire.png";
+import bobmarley from "./bobmarley.jpg";
+import cowfish from "./cowfish.jpg";
+import margaritaville from "./margaritaville.jpg";
+import sportsgrill from "./sportsgrill.jpg";
+import pat from "./pat.jpg";
+import vivo from "./vivo.jpg";
+import voodoo from "./voodoo.jpg";
+import hardrock from "./hardrock.jpg";
+import emporium from "./emporium.jpg";
 
 function createHomePage() {
     const main = document.getElementById("main");
@@ -74,21 +84,44 @@ function createContent() {
 
     const restaurantContainer = document.createElement("div");
     restaurantContainer.classList.add("restaurant-container");
-    restaurantContainer.appendChild(createRestaurantPreview("Antojitos Authentic Mexican Food™", antojitos));
+    restaurantContainer.appendChild(createRestaurantPreview("Antojitos Authentic Mexican Food™", antojitos, "https://www.universalorlando.com/web/en/gb/things-to-do/dining/antojitos-authentic-mexican-food/menu.html"));
+    restaurantContainer.appendChild(createRestaurantPreview("Bigfire American Fare", bigfire, "https://www.universalorlando.com/web/en/gb/things-to-do/dining/bigfire/menu.html"));
+    restaurantContainer.appendChild(createRestaurantPreview("Bob Marley — A Tribute to Freedom℠", bobmarley, "https://www.universalorlando.com/web/en/gb/things-to-do/dining/bob-marley-a-tribute-to-freedom/menu.html"));
+    restaurantContainer.appendChild(createRestaurantPreview("Cowfish", cowfish, "https://www.universalorlando.com/web/en/gb/things-to-do/dining/the-cowfish/menu.html"));
+    restaurantContainer.appendChild(createRestaurantPreview("Jimmy Buffet's® Margaritaville®", margaritaville, "https://www.universalorlando.com/web/en/gb/things-to-do/dining/jimmy-buffetts-margaritaville/menu.html"));
+    restaurantContainer.appendChild(createRestaurantPreview("NBC Sports Grill & Brew™", sportsgrill, "https://www.universalorlando.com/web/en/gb/things-to-do/dining/nbc-sports-grill-brew/menu.html"));
+    restaurantContainer.appendChild(createRestaurantPreview("Pat O'Brien's®", pat, "https://www.universalorlando.com/web/en/gb/things-to-do/dining/pat-o-briens/menu.html"));
+    restaurantContainer.appendChild(createRestaurantPreview("VIVO Italian Kitchen™", vivo, "https://www.universalorlando.com/web/en/gb/things-to-do/dining/vivo-italian-kitchen/menu.html"));
+    restaurantContainer.appendChild(createRestaurantPreview("Voodoo Doughnuts", voodoo, "https://www.universalorlando.com/web/en/gb/things-to-do/dining/voodoo-doughnut/menu.html"));
+    restaurantContainer.appendChild(createRestaurantPreview("Hard Rock Cafe® Orlando", hardrock, "https://cafe.hardrock.com/menu.aspx"));
+    restaurantContainer.appendChild(createRestaurantPreview("Toothsome Chocolate Emporium", emporium, "https://www.universalorlando.com/web/en/gb/things-to-do/dining/toothsome-chocolate-emporium-and-savory-feast-kitchen/menu.html"));
     mainInnerContentContainer.appendChild(restaurantContainer);
     mainContentContainer.appendChild(mainInnerContentContainer);
 
     return mainContentContainer;
 }
 
-function createRestaurantPreview(restaurantName, restaurantImg) {
+function createRestaurantPreview(restaurantName, restaurantImg, restaurantLink) {
     const restaurant = document.createElement("div");
     restaurant.classList.add("restaurant");
+
+    if (restaurantName == "Hard Rock Cafe® Orlando") {
+        restaurant.id = "hardrock";
+    }
+    
+    restaurant.addEventListener("click", function() {
+        window.open(restaurantLink, "_blank")
+    })
+    
+    const restaurantFront = document.createElement("div");
+    restaurantFront.classList.add("restaurant-front");
 
     const restaurantHeading = document.createElement("h1");
     restaurantHeading.textContent = restaurantName;
 
-    restaurant.appendChild(restaurantHeading);  
+    restaurantFront.appendChild(restaurantHeading);  
+
+    restaurant.appendChild(restaurantFront);
 
     restaurant.style.backgroundImage = 'url('+ restaurantImg + ' )';
     return restaurant;
