@@ -13,6 +13,8 @@ import voodoo from "./voodoo.jpg";
 import hardrock from "./hardrock.jpg";
 import emporium from "./emporium.jpg";
 
+import createMenuPage from "./menu";
+
 function createHomePage() {
     const main = document.getElementById("main");
     main.textContent = "";
@@ -45,6 +47,10 @@ function createHeader() {
     homeBtn.textContent = "Home";
     const menuBtn = document.createElement("button");
     menuBtn.textContent = "Menu";
+    menuBtn.addEventListener("click", function() {
+        createMenuPage();
+    }, false);
+    
     const aboutBtn = document.createElement("button");
     aboutBtn.textContent = "About";
 
@@ -119,7 +125,7 @@ function createRestaurantPreview(restaurantName, restaurantImg, restaurantLink) 
     const restaurantHeading = document.createElement("h1");
     restaurantHeading.textContent = restaurantName;
 
-    restaurantFront.appendChild(restaurantHeading);  
+    restaurantFront.appendChild(restaurantHeading);
 
     restaurant.appendChild(restaurantFront);
 
