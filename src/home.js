@@ -14,6 +14,7 @@ import hardrock from "./hardrock.jpg";
 import emporium from "./emporium.jpg";
 
 import createMenuPage from "./menu";
+import createAboutPage from './about';
 
 function createHomePage() {
     const main = document.getElementById("main");
@@ -45,6 +46,9 @@ function createHeader() {
 
     const homeBtn = document.createElement("button");
     homeBtn.textContent = "Home";
+    homeBtn.addEventListener("click", function() {
+        createHomePage();
+    }, false);
     const menuBtn = document.createElement("button");
     menuBtn.textContent = "Menu";
     menuBtn.addEventListener("click", function() {
@@ -53,6 +57,9 @@ function createHeader() {
     
     const aboutBtn = document.createElement("button");
     aboutBtn.textContent = "About";
+    aboutBtn.addEventListener("click", function() {
+        createAboutPage();
+    }, false);
 
     nav.appendChild(homeBtn);
     nav.appendChild(menuBtn);

@@ -96,7 +96,7 @@ header {
     font-size: 4em;
 
     margin-left: 1em;
-    padding-bottom: 0.1em;
+    margin-bottom: 0.1em;
 }
 
 nav {
@@ -116,20 +116,29 @@ nav button {
 
     color: white;
     background-color: var(--universalLightBlue);
+    cursor: pointer;
 }
 
-.main-content-container {
+nav button:hover {
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    transition: 3s;
+}
+
+.main-content-container,
+.main-about-container {
     background-color: white;
     background-image: url(citywalk-banner.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 70%;
 
-    border: 0.2em solid grey;
+    border: 0.2em solid rgba(255, 255, 255, 0.37);
     border-radius: 1em;
     box-shadow: 0em 0em 5em 2em #01070a3d;
 
     margin: 0.5em;
+    margin-top: 0em;
 }
 
 .inner-main-content-container {
@@ -206,4 +215,55 @@ nav button {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* Menu */
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 1fr);
+    gap: 2em;
+}
+
+.menu-img {
+    height: 10em;
+    border-radius: 100em;
+    border: 0.2em solid white;
+}
+
+.menu-highlight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.menu-item {
+    display: flex;
+    gap: 1em;
+    font-size: 0.8em;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    background-color: rgba(75, 75, 75, 0.3);
+
+    font-size: 2em;
+
+    margin: 2em;
+    padding: 1em;
+    border-radius: 0.5em;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
